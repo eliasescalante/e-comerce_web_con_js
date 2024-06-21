@@ -1,0 +1,15 @@
+[
+  {"id": 1, "name": "Guantes de Boxeo Proyec", "price": 25000, "image": "assets/guantes.jpg"},
+  {"id": 2, "name": "Cinturón Negro, resistente", "price": 15000, "image": "assets/cinturon.jpg"},
+  {"id": 3, "name": "Kimono de Entrenamiento Rojo", "price": 90000, "image": "assets/kimono.jpg"},
+  {"id": 4, "name": "Protector Bucal", "price": 2500, "image": "assets/p_bucal.jpg"},
+  {"id": 5, "name": "Casco de Combate", "price": 35000, "image": "assets/casco.jpg"},
+  {"id": 6, "name": "Canilleras para combate resistentes", "price": 25000, "image": "assets/canilleras.jpeg"},
+  {"id": 7, "name": "Bolsa de arena, Entrenamiento", "price": 28760, "image": "assets/bolsa.jpg"},
+  {"id": 8, "name": "Traje de competencia Wushu moderno", "price": 120000, "image": "assets/traje.jpg"},
+  {"id": 9, "name": "Protector de Pecho, para combate", "price": 35000, "image": "assets/pecho.jpg"},
+  {"id": 10, "name": "Tatami de entrenamiento 2mx2m", "price": 15000, "image": "assets/tatami.jpeg"},
+  {"id": 11, "name": "Sable de entrenamiento Wushu", "price": 70000, "image": "assets/sable.jpg"},
+  {"id": 12, "name": "Vendas deportivas", "price": 3200, "image": "assets/vendas.jpg"}
+]
+
