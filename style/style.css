@@ -29,14 +29,13 @@ header {
 .img-head-logo img {
     width: 100px; 
     height: auto;
-    margin-right: 10px;
 }
 
 .header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    flex: 1;
 }
+
 h1 {
     margin-bottom: 0.5em; 
 }
