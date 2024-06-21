@@ -10,35 +10,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para cargar el carrito desde localStorage al inicio
     const loadCartFromLocalStorage = () => {
-        const cartData = localStorage.getItem('cart');
-        if (cartData) {
-            cart = JSON.parse(cartData);
-            updateCart();
+        try {
+            const cartData = localStorage.getItem('cart');
+            if (cartData) {
+                cart = JSON.parse(cartData);
+                updateCart();
+            }
+        } catch (error) {
+            console.error('Error al cargar el carrito desde localStorage:', error);
         }
     };
 
     // Función para guardar el carrito en localStorage
     const saveCartToLocalStorage = () => {
-        localStorage.setItem('cart', JSON.stringify(cart));
+        try {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        } catch (error) {
+            console.error('Error al guardar el carrito en localStorage:', error);
+        }
     };
 
     // Uso Fetch para obtener los productos desde mi archivo JSON e insertarlos en el index
     fetch('base.json')
         .then(response => response.json())
         .then(products => {
-            products.forEach(product => {
-                const productItem = document.createElement('div');
-                productItem.className = 'product-item';
-                productItem.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <span>${product.name} - $${product.price}</span>
-                    <button data-id="${product.id}" class="btn">Agregar al Carrito</button>
-                `;
-                productsElement.appendChild(productItem);
-            });
+            try {
+                products.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'product-item';
+                    productItem.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <span>${product.name} - $${product.price}</span>
+                        <button data-id="${product.id}" class="btn">Agregar al Carrito</button>
+                    `;
+                    productsElement.appendChild(productItem);
+                });
+            } catch (error) {
+                console.error('Error al procesar productos:', error);
+            }
         })
         .catch(error => {
             console.error('Error al cargar productos:', error);
+        })
+        .finally(() => {
+            console.log('Carga de productos finalizada.');
         });
 
     // Evento clic en los productos para agregar al carrito
@@ -54,13 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('base.json')
             .then(response => response.json())
             .then(products => {
-                const product = products.find(p => p.id == productId);
-                cart.push(product);
-                updateCart();
-                saveCartToLocalStorage(); // Guardar el carrito en localStorage después de agregar un producto
+                try {
+                    const product = products.find(p => p.id == productId);
+                    cart.push(product);
+                    updateCart();
+                    saveCartToLocalStorage();
+                } catch (error) {
+                    console.error('Error al agregar producto:', error);
+                }
             })
             .catch(error => {
-                console.error('Error al agregar producto:', error);
+                console.error('Error al obtener productos:', error);
             });
     };
 
@@ -79,9 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsElement.appendChild(cartItem);
             total += product.price;
         });
-        totalPriceElement.textContent = total.toFixed(2); // Asegurar que el total tenga 2 decimales
-
-        // Mostrar u ocultar el botón de comprar según el contenido del carrito
+        totalPriceElement.textContent = total.toFixed(2);
         checkoutButton.style.display = cart.length > 0 ? 'block' : 'none';
     };
 
@@ -91,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const index = event.target.getAttribute('data-index');
             cart.splice(index, 1);
             updateCart();
-            saveCartToLocalStorage(); // Guardar el carrito en localStorage después de eliminar un producto
+            saveCartToLocalStorage();
         }
     });
 
@@ -133,19 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
+                    const { name, email } = result.value;
                     Swal.fire({
-                        title: 'Gracias por tu compra',
-                        text: '¡Se a enviado un link de pago a tu casilla de mail!',
+                        title: `Gracias ${name} por tu compra`,
+                        text: `¡Se a enviado un link de pago a (${email})!`,
                         icon: 'success'
                     });
                     // Aca simulo el envío y limpio el carrito
                     cart = [];
                     updateCart();
-                    localStorage.removeItem('cart'); // Limpiar el carrito en localStorage después de la compra
+                    localStorage.removeItem('cart'); // limpio el carrito en el localStorage después de la compra
                 }
             });
         }
     });
+    
 
     // Evento clic en el botón de nueva cotización para limpiar el carrito y actualizar la vista
     newQuoteButton.addEventListener('click', () => {
@@ -165,6 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // cargo en el carrito desde localStorage al iniciar la página
     loadCartFromLocalStorage();
 });
+
+
 
 
 
