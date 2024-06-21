@@ -1,5 +1,6 @@
 # Proyecto final de CODER-HOUSE
 # Alumno: Elias Escalante
+# Profesor: Ezequiel Madrid
 # Tutor: Maximiliano Salas 
 # Comision: 61995
 
@@ -20,7 +21,7 @@
  - El boton "comprar "desaparece si no hay elementos en el carrito.
  - Si no se completan los datos para la compra no se puede presionar "ir a pagar"
  - Al realizar la compra y finalizar todo el proceso tanto el LocalStorage como el carrito se vacian.
- - Si se cierra accidentalmente la ventana o se cierra queda guardado el carrito en el localStorage por lo que al abrir
+ - Si se cierra accidentalmente la ventana o se cierra, queda guardado el carrito en el localStorage por lo que al abrir
    nuevamente la pagina aparecera el carrito para continuar con la compra
  ---
 
