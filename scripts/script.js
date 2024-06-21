@@ -1,3 +1,5 @@
+
+// Espero a que el DOM del HTML se cargue
 document.addEventListener('DOMContentLoaded', () => {
     const productsElement = document.getElementById('products');
     const cartItemsElement = document.getElementById('cart-items');
@@ -181,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    // cargo en el carrito desde localStorage al iniciar la página
+    // cargo el carrito desde localStorage al iniciar la página
     loadCartFromLocalStorage();
 });
 
