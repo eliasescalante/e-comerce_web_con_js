@@ -20,9 +20,14 @@
  - El boton "comprar "desaparece si no hay elementos en el carrito.
  - Si no se completan los datos para la compra no se puede presionar "ir a pagar"
  - Al realizar la compra y finalizar todo el proceso tanto el LocalStorage como el carrito se vacian.
- 
+
  ---
 
 
+preview
 
-Entrega final del proyecto realizado en el curso de Javascript en Coder-House
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_1.JPG)
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_2.JPG)
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_3.JPG)
+
+---
