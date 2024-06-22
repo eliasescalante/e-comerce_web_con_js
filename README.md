@@ -14,7 +14,8 @@
 - El proyecto utiliza HTML, CSS y JavaScript para la creación de la interfaz.
 - Se agregan los productos al carrito luego se presiona el boton de comprar.
 - El boton comprar lanza una ventana emergente con dos campos para completar (nombre y e-mail)
-- Al presionar "ir a pagar", lanza otra ventana con un mensaje con el nombre ingresado y el mail a donde se envia el link de pago y las instrucciones de la compra
+- Al presionar "continuar", lanza otra ventana con un mensaje con el nombre ingresado y el mail a donde se envia el link de pago y las instrucciones de la compra
+- En la ventana al presionar "confirmar" ademas de emitir el mensaje de compra mas la infor ingresada, tambien informa el monto total de la compra realizada
 
 ----
    ## Comentarios sobre el proyecto: 
@@ -27,7 +28,7 @@
  - Si se cierra accidentalmente la ventana o se cierra, queda guardado el carrito en el localStorage por lo que al abrir
    nuevamente la pagina aparecera el carrito para continuar con la compra.
  - Se utilizo sentencias "try" para capturar errores.
- - Se utilizo CSS nativo y se armo para que el index.html sea responsive
+ - Se utilizo CSS nativo y se armo para que el index.html sea responsive.
  
  ---
 
