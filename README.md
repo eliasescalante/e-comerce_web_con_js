@@ -6,6 +6,8 @@
 
 ----
 
+## Descripcion
+
 - Mi proyecto simula un pequeño comercio que vende elementos de entrenamientos para artes marciales
 - El comercio tiene una variedad de productos que se pueden comprar
 - El usuario puede agregar productos al carrito, eliminarlos y ver el total de la compra
