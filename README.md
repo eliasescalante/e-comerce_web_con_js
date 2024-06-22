@@ -15,14 +15,16 @@
 - Al presionar "ir a pagar", lanza otra ventana con un mensaje con el nombre ingresado y el mail a donde se envia el link de pago y las instrucciones de la compra
 
 ----
-
+   ## Comentarios sobre el proyecto: 
+   
  - Utilice regex para validar el campo del e-mail.
  - Utlice la libreria sweetAlert2 para las ventanas emergentes.
  - El boton "comprar" desaparece si no hay elementos en el carrito. (ya sea que no agrego ninguno o si los elimino)
  - Si no se completan los datos para la compra no se puede presionar "ir a pagar".
  - Al realizar la compra y finalizar todo el proceso tanto el LocalStorage como el carrito se vacian.
  - Si se cierra accidentalmente la ventana o se cierra, queda guardado el carrito en el localStorage por lo que al abrir
-   nuevamente la pagina aparecera el carrito para continuar con la compra
+   nuevamente la pagina aparecera el carrito para continuar con la compra.
+ - Se utilizo sentencias "try" para capturar errores.
  ---
 
 
