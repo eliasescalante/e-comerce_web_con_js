@@ -147,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { name, email } = result.value;
                 Swal.fire({
                     title: `Gracias ${name} por tu compra`,
-                    text: `¡Se ha enviado un link de pago a (${email})!`,
+                    text: `¡Se ha enviado las instrucciones de la compra y el
+                    link de pago a (${email})!`,
                     icon: 'success'
                 });
                 cart = [];
