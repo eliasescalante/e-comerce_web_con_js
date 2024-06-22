@@ -34,10 +34,16 @@
 
 # Link a pages: https://eliasescalante.github.io/entrega_final_js/
 
-# preview
+# preview del sitio
 
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_1.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_2.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_3.JPG)
 
+# preview del sitio en mobile
+
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_1.JPG)
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_2.JPG)
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_3.JPG)
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_4.JPG)
 ---
