@@ -1,4 +1,3 @@
-
 // Espero a que el DOM del HTML se cargue
 document.addEventListener('DOMContentLoaded', () => {
     const productsElement = document.getElementById('products');
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </form>
             `,
             width: '600px',
-            confirmButtonText: 'Ir a pagar',
+            confirmButtonText: 'Continuar',
             showCancelButton: true,
             preConfirm: () => {
                 const name = Swal.getPopup().querySelector('#name').value;
@@ -145,10 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 const { name, email } = result.value;
+                const total = parseFloat(totalPriceElement.textContent).toFixed(2);
                 Swal.fire({
                     title: `Gracias ${name} por tu compra`,
-                    text: `¡Se ha enviado las instrucciones de la compra y el
-                    link de pago a (${email})!`,
+                    text: `¡El total de tu compra es $${total} pesos! Se han enviado las instrucciones para confirmar la compra con el link de pago a (${email})!`,
                     icon: 'success'
                 });
                 cart = [];
@@ -158,8 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    
-
     // Evento clic en el botón de nueva cotización para limpiar el carrito y actualizar la vista
     newQuoteButton.addEventListener('click', () => {
         cart = [];
@@ -178,9 +175,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // cargo el carrito desde localStorage al iniciar la página
     loadCartFromLocalStorage();
 });
-
-
-
-
 
 
