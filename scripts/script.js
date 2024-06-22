@@ -116,56 +116,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento clic en el botón de comprar
     checkoutButton.addEventListener('click', () => {
-        if (cart.length === 0) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Carrito Vacío',
-                text: 'Debe agregar al menos un producto al carrito antes de continuar.',
-                confirmButtonText: 'Aceptar'
-            });
-        } else {
-            Swal.fire({
-                title: 'Formulario de Compra',
-                html: `
-                    <form id="checkout-form">
-                        <div class="form-group">
-                            <label for="name">Nombre y Apellido:</label>
-                            <input type="text" id="name" name="name" required class="swal2-input" style="width: 80%;">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email" required class="swal2-input" style="width: 80%;">
-                        </div>
-                    </form>
-                `,
-                width: '600px',
-                confirmButtonText: 'Ir a pagar',
-                showCancelButton: true,
-                preConfirm: () => {
-                    const name = Swal.getPopup().querySelector('#name').value;
-                    const email = Swal.getPopup().querySelector('#email').value;
-                    if (!isValidEmail(email)) {
-                        Swal.showValidationMessage('Por favor, ingrese un correo electrónico válido.');
-                        return false;
-                    }
-                    return { name, email };
+        Swal.fire({
+            title: 'Formulario de Compra',
+            html: `
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellido:</label>
+                        <input type="text" id="name" name="name" required class="swal2-input" style="width: 80%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required class="swal2-input" style="width: 80%;">
+                    </div>
+                </form>
+            `,
+            width: '600px',
+            confirmButtonText: 'Ir a pagar',
+            showCancelButton: true,
+            preConfirm: () => {
+                const name = Swal.getPopup().querySelector('#name').value;
+                const email = Swal.getPopup().querySelector('#email').value;
+                if (!isValidEmail(email)) {
+                    Swal.showValidationMessage('Por favor, ingrese un correo electrónico válido.');
+                    return false;
                 }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    const { name, email } = result.value;
-                    Swal.fire({
-                        title: `Gracias ${name} por tu compra`,
-                        text: `¡Se a enviado un link de pago a (${email})!`,
-                        icon: 'success'
-                    });
-                    // Aca simulo el envío y limpio el carrito
-                    cart = [];
-                    updateCart();
-                    localStorage.removeItem('cart'); // limpio el carrito en el localStorage después de la compra
-                }
-            });
-        }
+                return { name, email };
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const { name, email } = result.value;
+                Swal.fire({
+                    title: `Gracias ${name} por tu compra`,
+                    text: `¡Se ha enviado un link de pago a (${email})!`,
+                    icon: 'success'
+                });
+                cart = [];
+                updateCart();
+                localStorage.removeItem('cart'); // limpio el carrito en el localStorage después de la compra
+            }
+        });
     });
+    
     
 
     // Evento clic en el botón de nueva cotización para limpiar el carrito y actualizar la vista
