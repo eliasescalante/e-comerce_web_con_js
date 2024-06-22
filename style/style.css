@@ -78,7 +78,7 @@ section {
     width: 25%;
 }
 
-.total{
+.total {
     font-size: 1.5em;
 }
 
@@ -236,4 +236,37 @@ footer {
 #total-price {
     font-size: 2em; /* Tamaño del texto del total del carrito */
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-head-logo {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #product-list, #cart {
+        width: 100%;
+    }
+
+    .product-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%;
+    }
+}
+
 
