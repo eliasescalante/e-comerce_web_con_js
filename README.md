@@ -1,4 +1,4 @@
-# Proyecto final de CODER-HOUSE
+# Proyecto final del curso de Javascript flex de CODER-HOUSE
 ## Alumno: Elias Escalante
 ## Profesor: Ezequiel Madrid
 ## Tutor: Maximiliano Salas 
