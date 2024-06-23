@@ -39,13 +39,8 @@
  - Al realizar la compra y finalizar todo el proceso tanto el LocalStorage como el carrito se vacian.
  - Si se cierra accidentalmente la ventana queda guardado el carrito en el localStorage por lo que al abrir
    nuevamente la pagina aparecera el carrito para continuar con la compra.
-<<<<<<< HEAD
- - Se utilizo sentencias "try" para capturar errores.
- - Se utilizo CSS nativo y diseñe el index.html para que sea responsive.
-=======
  - Utilice sentencias "try" para capturar errores.
  - Use CSS nativo y se armo para que el index.html sea responsive.
->>>>>>> 577690c0042275f385cb8b4c2b6413aea86f3d9c
  
  ---
 
