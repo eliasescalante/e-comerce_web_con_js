@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCart();
             }
         } catch (error) {
-            console.error('Error al cargar el carrito desde localStorage:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al cargar el carrito desde localStorage.'
+            });
         }
     };
 
@@ -27,7 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             localStorage.setItem('cart', JSON.stringify(cart));
         } catch (error) {
-            console.error('Error al guardar el carrito en localStorage:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al guardar el carrito en localStorage.'
+            });
         }
     };
 
@@ -47,11 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     productsElement.appendChild(productItem);
                 });
             } catch (error) {
-                console.error('Error al procesar productos:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Error al procesar productos.'
+                });
             }
         })
         .catch(error => {
-            console.error('Error al cargar productos:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al cargar productos.'
+            });
         })
         .finally(() => {
             console.log('Carga de productos finalizada.');
@@ -76,11 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     updateCart();
                     saveCartToLocalStorage();
                 } catch (error) {
-                    console.error('Error al agregar producto:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error al agregar producto.'
+                    });
                 }
             })
             .catch(error => {
-                console.error('Error al obtener productos:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Error al obtener productos.'
+                });
             });
     };
 
@@ -175,5 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // cargo el carrito desde localStorage al iniciar la página
     loadCartFromLocalStorage();
 });
+
 
 
