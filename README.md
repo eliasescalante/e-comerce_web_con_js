@@ -45,8 +45,8 @@
 
 # preview del sitio en mobile
 
-![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_1.JPG) ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_2.JPG)
-
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_1.JPG) 
+![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_2.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_3.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_4.JPG)
 ---
