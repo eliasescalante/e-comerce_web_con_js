@@ -1,11 +1,11 @@
-/* Estilos basicos */
+/* Estilo basico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
+/* Estilo general*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -186,7 +186,7 @@ input[type="email"] {
     flex-direction: column;
 }
 
-/* Estilos para SweetAlert2 */
+/* Estilos para ajustar los elementos generados por el SweetAlert2 */
 .swal2-popup .form-group {
     margin-bottom: 1em;
 }
@@ -213,31 +213,31 @@ footer {
     text-align: center;
 }
 
-/* Estilos para el contenido del footer */
+/* contenido del footer */
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Estilos para el logo en el footer */
+/* logo en el footer */
 .footer-content img {
     width: 40px;
     height: auto;
     margin-right: 10px;
 }
 
-/* Estilos para el texto en el footer */
+/* texto en el footer */
 .footer-content span {
     font-size: 18px;
 }
 
 /* Ajuste para el tamaño del total del carrito */
 #total-price {
-    font-size: 2em; /* Tamaño del texto del total del carrito */
+    font-size: 2em;
 }
 
-/* Media Queries para dispositivos móviles */
+/* agregue Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

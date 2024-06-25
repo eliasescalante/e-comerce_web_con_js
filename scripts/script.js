@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Uso un array para almacenar los productos seleccionados en el carrito
     let cart = [];
 
-    // Función para cargar el carrito desde localStorage al inicio
+    // cargo el carrito desde localStorage al inicio
     const loadCartFromLocalStorage = () => {
         try {
             const cartData = localStorage.getItem('cart');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Función para guardar el carrito en localStorage
+    // guardo el carrito en localStorage y uso la estructura try
     const saveCartToLocalStorage = () => {
         try {
             localStorage.setItem('cart', JSON.stringify(cart));
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Función para agregar un producto al carrito
+    // agrego un producto al carrito
     const addProductToCart = (productId) => {
         fetch('base.json')
             .then(response => response.json())
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
-    // Función para actualizar la visualización del carrito
+    // actualizo la visualización del carrito
     const updateCart = () => {
         cartItemsElement.innerHTML = '';
         let total = 0;
@@ -181,17 +181,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Evento clic en el botón de nueva cotización para limpiar el carrito y actualizar la vista
+    // Evento clic en el botón de continuar para limpiar el carrito y actualizar la vista
     newQuoteButton.addEventListener('click', () => {
         cart = [];
         updateCart();
-        localStorage.removeItem('cart'); // Limpiar el carrito en localStorage al iniciar una nueva cotización
+        localStorage.removeItem('cart');
     });
 
     // Oculto el botón de comprar al inicio.
     checkoutButton.style.display = 'none';
 
-    // Función para validar el formato de email usando una expresión regular
+    // valido el formato de email usando regex
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
