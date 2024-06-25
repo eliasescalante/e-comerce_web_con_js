@@ -40,38 +40,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Uso Fetch para obtener los productos desde mi archivo JSON e insertarlos en el index
-    fetch('base.json')
-        .then(response => response.json())
-        .then(products => {
-            try {
-                products.forEach(product => {
-                    const productItem = document.createElement('div');
-                    productItem.className = 'product-item';
-                    productItem.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}">
-                        <span>${product.name} - $${product.price}</span>
-                        <button data-id="${product.id}" class="btn">Agregar al Carrito</button>
-                    `;
-                    productsElement.appendChild(productItem);
-                });
-            } catch (error) {
+    const loadProducts = () => {
+        fetch('base.json')
+            .then(async response => {
+                const products = await response.json();
+                try {
+                    products.forEach(product => {
+                        const productItem = document.createElement('div');
+                        productItem.className = 'product-item';
+                        productItem.innerHTML = `
+                            <img src="${product.image}" alt="${product.name}">
+                            <span>${product.name} - $${product.price}</span>
+                            <button data-id="${product.id}" class="btn">Agregar al Carrito</button>
+                        `;
+                        productsElement.appendChild(productItem);
+                    });
+                } catch (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error al procesar productos.'
+                    });
+                }
+            })
+            .catch(error => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: 'Error al procesar productos.'
+                    text: 'Error al cargar productos.'
                 });
-            }
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Error al cargar productos.'
+            })
+            .finally(() => {
+                console.log('Carga de productos finalizada.');
             });
-        })
-        .finally(() => {
-            console.log('Carga de productos finalizada.');
-        });
+    };
+
+    loadProducts();
 
     // Evento clic en los productos para agregar al carrito
     productsElement.addEventListener('click', (event) => {
@@ -84,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // agrego un producto al carrito
     const addProductToCart = (productId) => {
         fetch('base.json')
-            .then(response => response.json())
-            .then(products => {
+            .then(async response => {
+                const products = await response.json();
                 try {
                     const product = products.find(p => p.id == productId);
                     cart.push(product);
@@ -180,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     // Evento clic en el botón de continuar para limpiar el carrito y actualizar la vista
     newQuoteButton.addEventListener('click', () => {
         cart = [];
@@ -199,6 +203,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // cargo el carrito desde localStorage al iniciar la página
     loadCartFromLocalStorage();
 });
-
-
-
