@@ -20,16 +20,16 @@
 
 ## Comentarios sobre el proyecto: 
 
- - El proyecto utiliza HTML, CSS y JavaScript para la creación de la interfaz.
- - Utilice regex para validar el campo del e-mail.
- - Utilice la libreria sweetAlert2 para las ventanas emergentes.
- - El boton "comprar" desaparece si no hay elementos en el carrito. (ya sea que no agrego ninguno o si elimino todos los productos)
- - Si no se completan los datos para la compra, no se puede presionar "ir a pagar".
- - Al realizar la compra y finalizar todo el proceso, tanto el LocalStorage como el carrito se vacian.
- - Si se cierra accidentalmente la ventana queda guardado el carrito en el localStorage por lo que al abrir
-   nuevamente la pagina aparecera el carrito para continuar con la compra.
- - Utilice sentencias "try" para capturar errores.
- - Use CSS nativo y lo arme para que el index.html sea responsive.
+- **Estructura**: El proyecto utiliza HTML para la estructura básica y CSS para el estilo y la presentación de la información.
+- **Interactividad**: Toda la información y los eventos se gestionan e insertan en el HTML mediante JavaScript.
+- **Validación de datos**: Utilicé expresiones regulares (regex) para validar el campo del correo electrónico.
+- **Ventanas emergentes**: Utilicé la librería SweetAlert2 para las ventanas emergentes.
+- **Gestión del carrito**: El botón "Comprar" desaparece si no hay elementos en el carrito, ya sea porque no se han agregado productos o porque se han eliminado todos.
+- **Proceso de compra**: No se puede presionar "Ir a pagar" si no se completan todos los datos requeridos para la compra.
+- **Finalización de compra**: Al completar la compra, tanto el carrito como el LocalStorage se vacían.
+- **Persistencia del carrito**: Si se cierra accidentalmente la ventana, el carrito se guarda en el LocalStorage, permitiendo que se recupere al volver a abrir la página.
+- **Manejo de errores**: Utilicé sentencias try para capturar y gestionar errores.
+- **Responsividad**: Utilicé CSS nativo y diseñé el index.html para que sea responsive.
  
  ---
 
