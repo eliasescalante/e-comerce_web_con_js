@@ -49,4 +49,11 @@
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_2.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_3.JPG)
 ![Texto alternativo](https://github.com/eliasescalante/entrega_final_js/blob/main/assets/capture_responsive_4.JPG)
----
+----
+![GitHub repo size](https://img.shields.io/github/repo-size/eliasescalante/entrega_final_js
+)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eliasescalante/entrega_final_js
+)
+![GitHub last commit](https://img.shields.io/github/last-commit/eliasescalante/entrega_final_js
+)
+
