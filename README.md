@@ -30,6 +30,7 @@
 - **Persistencia del carrito**: Si se cierra accidentalmente la ventana, el carrito se guarda en el LocalStorage, permitiendo que se recupere al volver a abrir la página.
 - **Manejo de errores**: Utilicé sentencias try para capturar y gestionar errores.
 - **Responsividad**: Utilicé CSS nativo y diseñé el index.html para que sea responsive.
+- **base de datos** Se utilizo un archivo json para simular la base de datos, este archivo almacena los productos que se venden en la pagina. y desde el archivo se insertan los productos en el html.
  
  ---
 
