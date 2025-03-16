@@ -34,7 +34,7 @@
  
  ---
 
-# Link a pages: https://eliasescalante.github.io/entrega_final_js/
+# Link a pages: https://eliasescalante.github.io/e-comerce_web_con_js/
 
 ---
 
